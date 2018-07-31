@@ -78,7 +78,7 @@ plotxkcdGraph <- function(graph, coord, layoutfun=NULL, dia=.1, vertex.labels=FA
     gdatedg <- gdatedg[which(gdatedg$Var1 != gdatedg$Var2), ]
 
     p <- ggplot()
-    p <-   p + xkcdline(mapping=aes(xbegin=xbeg, ybegin=ybeg, xend=xend, yend=yend), data=gdatedg, size=1, mask=FALSE)
+    p <-   p + xkcdline(mapping=aes(x=xbeg, y=ybeg, xend=xend, yend=yend), data=gdatedg, size=1, mask=FALSE)
          + xkcdfilledcircle(mapping=aes(x=x, y=y, diameter=dia, fill=lab), data=data, colour='black', size=1)
          + geom_text(aes(x=jitter(x, amount=.02), y=jitter(y, amount=.02), label = lab), data=data, size=20, family="xkcd")
          + theme(line = element_blank(),
